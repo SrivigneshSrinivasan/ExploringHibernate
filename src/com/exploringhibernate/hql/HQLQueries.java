@@ -9,7 +9,7 @@ import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 import com.exploringhibernate.dto.Recipe;
 
-public class MainClass {
+public class HQLQueries {
 
 	public static void main(String[] args) throws SQLException {
 

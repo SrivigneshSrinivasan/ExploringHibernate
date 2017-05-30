@@ -43,7 +43,7 @@
 		<property name="show_sql">true</property>
 
 		<!-- Drop and re-create the database schema on startup -->
-		<!-- <property name="hbm2ddl.auto">update</property> -->
+		<property name="hbm2ddl.auto">create</property>
 
 		<mapping class="com.exploringhibernate.dto.Recipe" />
 		<mapping class="com.exploringhibernate.dto.Ingredient" />
@@ -51,8 +51,13 @@
 		<mapping class="com.exploringhibernate.dto.Animal" />
 		<mapping class="com.exploringhibernate.dto.Lion" />
 		<mapping class="com.exploringhibernate.dto.Elephant" />
-	</session-factory>
+		<mapping class="com.exploringhibernate.dto.UserDetails" />
+		<mapping class="com.exploringhibernate.dto.UserDetail" />
+		<mapping class="com.exploringhibernate.dto.Student" />
+		<mapping class="com.exploringhibernate.dto.StudentAddress" />
+		<mapping class="com.exploringhibernate.dto.Address" />
+		<mapping class="com.exploringhibernate.dto.Employee" />
 
-</session-factory>
+	</session-factory>
 
 </hibernate-configuration>
