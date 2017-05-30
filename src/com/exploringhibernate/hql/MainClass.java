@@ -1,4 +1,4 @@
-package com.exploringhibernate;
+package com.exploringhibernate.hql;
 
 import java.sql.SQLException;
 
@@ -7,7 +7,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 
-import com.exploringhibernate.recipes.Recipe;
+import com.exploringhibernate.dto.Recipe;
 
 public class MainClass {
 
@@ -19,9 +19,9 @@ public class MainClass {
 		// "testuser", "test");
 		// boolean reachable = conn.isValid(5);
 		// System.out.println("Can connect to DB? : "+reachable);
-		
+
 		AnnotationConfiguration config = new AnnotationConfiguration();
-		config.configure();
+		config.configure("hibernate.cfg.xml");
 		new SchemaExport(config).create(true, true);
 		SessionFactory factory = config.buildSessionFactory();
 
@@ -30,9 +30,15 @@ public class MainClass {
 		Recipe recipe = new Recipe();
 		recipe.setRecipeId(1);
 		recipe.setRecipeName("Sambar");
-		recipe.setDescription("Description of Sambar");
+		recipe.setRecipeDescription("Description of Sambar");
 
-		session.save(recipe);
+		Recipe recipe1 = new Recipe();
+		recipe1.setRecipeId(2);
+		recipe1.setRecipeName("Fish Fry");
+		recipe1.setRecipeDescription("Description of Fish Fry");
+
+		session.persist(recipe);
+		session.persist(recipe1);
 		session.getTransaction().commit();
 
 	}

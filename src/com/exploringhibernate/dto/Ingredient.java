@@ -1,4 +1,4 @@
-package com.exploringhibernate.recipes;
+package com.exploringhibernate.dto;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -9,8 +9,7 @@ public class Ingredient {
 	@Id
 	private int ingredientId;
 	private String ingredientName;
-	private String ingredientQuantity;
-	
+	private String ingredientQuantity;	
 	
 	public int getIngredientId() {
 		return ingredientId;
